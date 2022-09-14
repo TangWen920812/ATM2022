@@ -1,0 +1,10 @@
+version: "2.3"
+services:
+  base_py27:
+    image: hub.infervision.com/dev/python:2.7.12-1404
+    build:
+      context: .
+      dockerfile: baseenvpy27.dockerfile
+      shm_size: '2gb'
+      args:
+      - HTTPS_PROXY=http://192.168.111.249:8123

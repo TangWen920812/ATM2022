@@ -1,0 +1,25 @@
+version: "2.3"
+services:
+  test_py27:
+    image: hub.infervision.com/dev/python:2.7.12-1404
+    volumes:
+    - ../src/dist:/dist
+    - /tmp:/result
+    - ./docker_test_script.sh:/docker_test_script.sh
+    - ./test_lungsegmentor.py:/test_lungsegmentor.py
+    - ../testdata/failedCase181207/432349/1.2.840.113619.2.334.3.497863752.249.1543225728.780/1.2.840.113619.2.334.3.497863752.249.1543225728.785.3:/imagedir
+    environment:
+      RESULT_FNAME: "test_py27"
+    entrypoint: ['/bin/bash', '/docker_test_script.sh']
+
+  test_py37:
+    image: hub.infervision.com/dev/python:3.7.4-stretch-gdcm
+    volumes:
+    - ../src/dist:/dist
+    - /tmp:/result
+    - ./docker_test_script.sh:/docker_test_script.sh
+    - ./test_lungsegmentor.py:/test_lungsegmentor.py
+    - ../testdata/failedCase181207/432349/1.2.840.113619.2.334.3.497863752.249.1543225728.780/1.2.840.113619.2.334.3.497863752.249.1543225728.785.3:/imagedir
+    environment:
+      RESULT_FNAME: "test_py37"
+    entrypoint: ['/bin/bash', '/docker_test_script.sh']

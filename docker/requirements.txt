@@ -1,0 +1,10 @@
+pillow>=8.3.2
+numpy==1.21.5
+SimpleITK==2.0.2
+h5py==3.1.0
+nibabel==3.2.1
+scikit-image==0.17.2
+tqdm==4.54.1
+scipy==1.5.4
+onnxruntime
+pandas

@@ -1,0 +1,2 @@
+include lung_segmentor_itk/svm181020.model.onnx
+include lung_segmentor_itk/svm181020.scaler.onnx
