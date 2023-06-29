@@ -319,8 +319,8 @@ def tree_parse_tw():
         label = (label > 0).astype(np.uint8)
         label = large_connected_domain(label)
         skeleton = skeletonize_3d(label)
-        # skeleton_nii = nibabel.Nifti1Image(skeleton, np.eye(4))
-        # nibabel.save(skeleton_nii, os.path.join('./data/skeleton_valid', f))
+        skeleton_nii = nibabel.Nifti1Image(skeleton, np.eye(4))
+        nibabel.save(skeleton_nii, os.path.join('./data/skeleton', f))
         # print(ids, f)
         # continue
         skeleton_parse, cd, num = skeleton_parsing(skeleton)
